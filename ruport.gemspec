@@ -25,9 +25,8 @@ Gem::Specification.new do |s|
   s.require_paths = %w[lib]
 
   s.add_runtime_dependency "ostruct"
-  s.add_runtime_dependency "prawn", "~> 2.4.0"
-  # matrix required by prawn.
-  # Drop this once we upgrade to prawn 2.5:
+  s.add_runtime_dependency "prawn", ">= 2.4", "< 3.0"
+  # matrix is required by prawn < 2.5; prawn 2.5+ bundles it via pdf-core 0.10
   s.add_runtime_dependency "matrix"
   s.add_runtime_dependency "prawn-table", "~> 0.2.0"
   # csv required by prawn-table:
